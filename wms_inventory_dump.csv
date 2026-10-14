@@ -1,0 +1,6 @@
+snapshot_date,sku,product_name,category,quantity_on_hand,unit_cost_usd
+2026-10-14, TS-01 ,Tech Shirt,apparel,150,25.0
+2026-10-14,EL-05,Wireless Mouse,electronics,45,19.99
+2026-10-14,AP-02,,Apparel,12,45.5
+2026-10-14,TS-01,Tech Shirt,apparel,100,25.0
+2026-10-14,BR-99 ,Broken Item,Storage,-5,10.0

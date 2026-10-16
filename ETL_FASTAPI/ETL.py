@@ -45,6 +45,9 @@ def run_pandas_pipeline():
     # 'records' format outputs: [{"id": 1001, "name": "widget alpha", "value": 45.99}, ...]
     cleaned_records = df.to_dict(orient="records")
     
+    # 🚨 ADD THIS LINE to see exactly what data is being sent
+    print(f"[DEBUG] Raw payload data sample: {cleaned_records[:2]}")
+    
     print(f"[ETL] Loading {len(cleaned_records)} sanitised elements into FastAPI...")
     try:
         response = requests.post(API_URL, json=cleaned_records)
@@ -52,6 +55,9 @@ def run_pandas_pipeline():
             print("[ETL] Load step complete!", response.json())
         else:
             print(f"[ETL] FastAPI rejected payload. Status: {response.status_code}")
+            # 🚨 ADD THIS LINE to see the exact validation error reason from FastAPI
+            print(f"[DEBUG] FastAPI Error Reason: {response.text}")
+            
     except requests.exceptions.ConnectionError:
         print("[ETL] Network Failure: Ensure your FastAPI terminal server is alive.")
 

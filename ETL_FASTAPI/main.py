@@ -7,7 +7,7 @@ app=FastAPI(title='Local stateless pipeline API')
 DB_MOCK=[]
 
 class DataPayload(BaseModel):
-    id:Optional[str]=None
+    id:Optional[int]=None
     name:Optional[str]=None
     value:Optional[float]=None
 

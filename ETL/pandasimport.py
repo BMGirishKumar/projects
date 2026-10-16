@@ -50,7 +50,7 @@ def run_etl_pipeline(file_path):
     # 3. LOAD STEP (Populating the Star Schema)
     # ----------------------------------------------------
     with engine.begin() as conn:
-        print("摧 Initializing relational database schemas...")
+        print("Initializing relational database schemas...")
         
         # Build relational analytical layer matching Star Schema constraints
         conn.execute(text("""

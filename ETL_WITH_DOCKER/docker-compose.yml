@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # FastAPI Web Service
+  web:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - ENV=production
+    restart: always
+
+  # ETL Pipeline Service
+  etl:
+    build: .
+    container_name: etl_pipeline
+    volumes:
+      - .:/app
+    environment:
+      - ENV=production
+    # This runs your ETL script inside the container
+    command: python etl/run_pipeline.py 
+    restart: on-failure

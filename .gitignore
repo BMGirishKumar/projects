@@ -1,0 +1,10 @@
+# Ignore the 5 GB raw mock data chunks
+data/wms_events/
+
+# Ignore the generated output reports
+data/output/
+
+# Ignore Python virtual environments and caches
+.venv/
+__pycache__/
+*.pyc
